@@ -4,8 +4,7 @@
 
 嗨嗨安全 ---- 更多好文章等你来读
 
-![图片](https://github.com/sujiawei00/naturahi/assets/58332933/d4551004-23fe-4bea-81f8-7fc3d1e69cd9)
-
+![图片](https://github.com/sujiawei00/naturahi/assets/58332933/82b33850-748d-4e03-8da0-d6552a4c91c5)
 
 searchall3.2可以快速搜索服务器中的有关username，passsword,账号，口令的敏感信息
 
