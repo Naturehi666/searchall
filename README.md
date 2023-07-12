@@ -6,7 +6,7 @@
 
 ![图片](https://github.com/sujiawei00/naturahi/assets/58332933/82b33850-748d-4e03-8da0-d6552a4c91c5)
 
-searchall3.4可以快速搜索服务器中的有关username，passsword,账号，口令的敏感信息
+searchall3.5可以快速搜索服务器中的有关username，passsword,账号，口令的敏感信息还有浏览器的账户密码。
 
 
 开发者日志
@@ -35,9 +35,23 @@ searchall3.4可以快速搜索服务器中的有关username，passsword,账号�
 ![image](https://github.com/Naturehi666/naturehi/assets/58332933/2a038208-c428-4b72-b823-9f51e7e2d26a)
 
 
+6.25日 更新3.5版本
+
+1.解决已知bug
+2.增加读取浏览器账户，密码功能
+感谢大佬！参考了大佬的工具 https://github.com/moonD4rk/HackBrowserData 集成到了一起。
+![image](https://github.com/Naturehi666/naturehi/assets/58332933/62b8fb88-c986-4be5-b043-921df5ed8de8)
+
+
 下一步开发计划
 
 加入 doc，ppt，xls读取功能，敬请期待
+
+鸣谢
+感谢网上开源的相关项目！
+
+免责声明
+本工具仅能在取得足够合法授权的企业安全建设中使用，在使用本工具过程中，您应确保自己所有行为符合当地的法律法规。 如您在使用本工具的过程中存在任何非法行为，您将自行承担所有后果，本工具所有开发者和所有贡献者不承担任何法律及连带责任。 除非您已充分阅读、完全理解并接受本协议所有条款，否则，请您不要安装并使用本工具。 您的使用行为或者您以其他任何明示或者默示方式表示接受本协议的，即视为您已阅读并同意本协议的约束。
 
 
 
