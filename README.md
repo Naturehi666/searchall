@@ -35,13 +35,24 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 ![image](https://github.com/Naturehi666/naturehi/assets/58332933/2a038208-c428-4b72-b823-9f51e7e2d26a)
 
 
-6.25日 更新3.5版本
+7.12日 更新3.5版本
 
 1.解决已知bug
 2.增加读取浏览器账户，密码功能
 
 感谢大佬！参考了大佬的工具 https://github.com/moonD4rk/HackBrowserData 集成到了一起。
 ![image](https://github.com/Naturehi666/naturehi/assets/58332933/62b8fb88-c986-4be5-b043-921df5ed8de8)
+
+
+7.13日 更新3.5.1版本
+
+
+1.解决linux输入根目录报错问题，目前已禁止根目录扫描
+
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/a14f513c-3b2c-4634-b184-4af9595b8f0b)
+
+
 
 
 下一步开发计划
