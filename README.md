@@ -54,6 +54,22 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 
 
+7.14日 更新3.5.2版本
+
+
+1.彻底解决linux输入根目录问题
+2.解决占用cpu,内存过高等问题
+
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/f4260ef6-cf01-4ad1-ad6d-3360d9e0a6ba)
+
+
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/c708169b-56b5-4e0c-acf4-cffdf5dc8733)
+
+
+
+
 
 下一步开发计划
 
