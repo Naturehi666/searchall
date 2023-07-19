@@ -69,6 +69,30 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 
 
+7.19日 更新3.5.3版本
+
+
+1.解决因线程过多导致目录扫不全问题
+2.增加/etc/passwd,/etc/shadow扫描直接取出
+3.增加/var/log/secure 扫描时取出登陆成功记录
+4.增加浏览器生成的result文件夹打包功能
+
+
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/4369f79f-b7d9-41d0-b899-351adb9e0792)
+
+
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/e0741031-f493-4f58-95b7-e3288e51c943)
+
+
+
+
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/f3b6fc4e-9145-421d-aa07-7c2b4105e957)
+
+
+
 
 
 下一步开发计划
