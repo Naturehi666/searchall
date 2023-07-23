@@ -73,24 +73,17 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 
 1.解决因线程过多导致目录扫不全问题
-2.增加/etc/passwd,/etc/shadow扫描直接取出
-3.增加/var/log/secure 扫描时取出登陆成功记录
-4.增加accessKeyId,accessKeySecret匹配规则
+2.增加/var/log/secure 扫描时取出登陆成功记录
+3.增加accessKeyId,accessKeySecret匹配规则
 4.增加浏览器生成的result文件夹打包功能
+5.增加扫描有效文件数实时响应功能
+6.增加扫描服务器中是否安装docker功能
 
 
+![image](https://github.com/Naturehi666/searchall/assets/58332933/440229d6-f0c3-473f-a612-c3ed7b289400)
 
-![image](https://github.com/Naturehi666/searchall/assets/58332933/4369f79f-b7d9-41d0-b899-351adb9e0792)
+![image](https://github.com/Naturehi666/searchall/assets/58332933/84d6fd7b-865d-4a78-9858-8c53f21420c7)
 
-
-
-![image](https://github.com/Naturehi666/searchall/assets/58332933/e0741031-f493-4f58-95b7-e3288e51c943)
-
-
-
-
-
-![image](https://github.com/Naturehi666/searchall/assets/58332933/f3b6fc4e-9145-421d-aa07-7c2b4105e957)
 
 
 
