@@ -74,7 +74,7 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 1.解决因线程过多导致目录扫不全问题
 2.增加/var/log/secure 扫描时取出登陆成功记录
-3.增加accessKeyId,accessKeySecret匹配规则
+3.增加accessKeyId,accessKeySecret,jdbc匹配规则
 4.增加浏览器生成的result文件夹打包功能
 5.增加扫描有效文件数实时响应功能
 6.增加扫描服务器中是否安装docker功能
