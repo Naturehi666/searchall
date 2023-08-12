@@ -87,6 +87,17 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 
 
+8.12日 更新3.5.4版本
+
+
+增加 CorpId，CorpSecret，qq.im.sdkappid，qq.im.privateKey，qq.im.identifier的读取规则
+
+
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/02f063c9-5227-4534-b654-2e93cfa62560)
+
+
+
 
 
 下一步开发计划
