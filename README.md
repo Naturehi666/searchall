@@ -85,7 +85,6 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 ![image](https://github.com/Naturehi666/searchall/assets/58332933/440229d6-f0c3-473f-a612-c3ed7b289400)
 
-![image](https://github.com/Naturehi666/searchall/assets/58332933/84d6fd7b-865d-4a78-9858-8c53f21420c7)
 
 
 
