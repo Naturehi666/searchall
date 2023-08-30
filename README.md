@@ -118,6 +118,15 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 
 
+8.30日 更新3.5.6版本
+
+此版本可在谷歌运行时读取Cookie
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/94c82800-59d0-4992-9182-c786b27de08f)
+
+
+
+
 
 
 
