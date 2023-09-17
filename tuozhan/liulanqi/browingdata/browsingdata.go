@@ -70,9 +70,7 @@ func (d *Data) Output(dir, browserName, flag string) {
 			continue
 		}
 		log.Noticef("output to file %s success", path.Join(dir, filename))
-
 	}
-
 }
 
 func (d *Data) addSources(items []item.Item) {

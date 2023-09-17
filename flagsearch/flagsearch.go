@@ -14,7 +14,7 @@ func Banner() {
  __                        
 (_  _  _  __ _ |_  _  |  | 
 __)(/_(_| | (_ | |(_| |  |
-        verson:3.5.5
+        verson:3.5.6
                      `)
 
 }
@@ -54,7 +54,7 @@ func FlagSearchall() {
 	} else if *searchPath != "" && *browserFlag == "" && *userRegexes == "" && *stringRegexes != "" {
 		search.Searchall(*searchPath, userRegexList, *userOnlyFlag)
 	} else if *searchPath == "" && *browserFlag != "" {
-		liulanqi.Chromeall(*browserFlag)
+		liulanqi.Execute(*browserFlag)
 		if *zipFlag {
 			err := liulanqi.CompressResult()
 			if err != nil {

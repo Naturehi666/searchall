@@ -53,6 +53,7 @@ func pickChromium(name, profile string) []Browser {
 				continue
 			}
 			for _, b := range multiChromium {
+
 				log.Noticef("find browser %s success", b.Name())
 				browsers = append(browsers, b)
 			}
@@ -71,6 +72,7 @@ func pickChromium(name, profile string) []Browser {
 		}
 		for _, b := range chromiumList {
 			log.Noticef("find browser %s success", b.Name())
+
 			browsers = append(browsers, b)
 		}
 	}
@@ -87,11 +89,13 @@ func pickFirefox(name, profile string) []Browser {
 			} else {
 				profile = fileutil.ParentDir(profile)
 			}
+
 			if !fileutil.IsDirExists(filepath.Clean(profile)) {
 				log.Noticef("find browser firefox %s failed, profile folder does not exist", v.name)
 				continue
 			}
-			if multiFirefox, err := firefox.New(v.name, v.storage, profile, v.items); err == nil {
+
+			if multiFirefox, err := firefox.New(profile, v.items); err == nil {
 				for _, b := range multiFirefox {
 					log.Noticef("find browser firefox %s success", b.Name())
 					browsers = append(browsers, b)
@@ -100,8 +104,10 @@ func pickFirefox(name, profile string) []Browser {
 				log.Error(err)
 			}
 		}
+
 		return browsers
 	}
+
 	return nil
 }
 

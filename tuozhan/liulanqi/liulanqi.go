@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"searchall3.5/tuozhan/liulanqi/system"
 
 	"searchall3.5/tuozhan/liulanqi/browser"
 	"searchall3.5/tuozhan/liulanqi/log"
@@ -17,20 +16,6 @@ var (
 	profilePath  string
 	isFullExport bool
 )
-
-func Chromeall(browserFlag string) {
-	switch browserFlag {
-	case "chrome", "chromium", "chrome-beta", "all":
-		system.Run()
-		Execute(browserFlag)
-
-	case "firefox", "360speed", "edge", "qq", "sogou":
-		Execute(browserFlag)
-
-	default:
-		fmt.Println("请输入有效的浏览器参数:" + browser.Names())
-	}
-}
 
 func Execute(browserFlag string) {
 
@@ -48,6 +33,7 @@ func Execute(browserFlag string) {
 		data, err := b.BrowsingData(isFullExport)
 		if err != nil {
 			log.Error(err)
+			continue
 		}
 		data.Output(outputDir, b.Name(), outputFormat)
 	}
