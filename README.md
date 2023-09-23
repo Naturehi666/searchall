@@ -113,6 +113,15 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 ![image](https://github.com/Naturehi666/searchall/assets/58332933/02f063c9-5227-4534-b654-2e93cfa62560)
 
 
+9.23日 更新3.5.7版本
+
+修改友好界面
+解决已知bug
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/5b6ed597-9996-499b-9426-0fc5666aefb9)
+
+
+
 
 
 
