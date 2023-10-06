@@ -121,6 +121,13 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 ![image](https://github.com/Naturehi666/searchall/assets/58332933/5b6ed597-9996-499b-9426-0fc5666aefb9)
 
 
+10.6日 更新3.5.8版本
+
+1.解决已知bug
+2.增加-e 参数拓展自定义扩展名功能，例如.java , .log 都可以
+3.增加-n 参数可以只扫描指定拓展名的功能
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/0a9a4244-8768-414a-977f-61f8bcec5670)
 
 
 
