@@ -18,7 +18,8 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 
 欢迎加入交流群！！！
-![image](https://github.com/Naturehi666/searchall/assets/58332933/1d674e49-3986-48b9-b07d-89a49a7550b9)
+![5321f5e37a3001cc55f98f4b0ea79df](https://github.com/Naturehi666/searchall/assets/58332933/2b06c0f4-02e3-4017-b441-110e1bb026c9)
+
 
 如果二维码过期，添加客服拉你进群，备注searchall
 
