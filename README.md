@@ -133,9 +133,7 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 
 
-下一步开发计划
 
-加入 doc，ppt，xls读取功能，敬请期待
 
 鸣谢
 
