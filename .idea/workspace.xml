@@ -40,6 +40,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2RVCTedXW19enndiW8gpwHKhEwn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,6 +60,7 @@
     &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -61,12 +68,13 @@
     &quot;configurable.GoLibrariesConfigurable.is.expanded&quot;: &quot;true&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/10506/GolandProjects/searchall3.5.6&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/10506/GolandProjects/searchall3.5.8_linux专版&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.goide.configuration.GoProjectSettingsConfigurable&quot;
   }
 }</component>
@@ -85,7 +93,7 @@
       <recent name="C:\Users\10506\GolandProjects\searchall3.5\tuozhan\liulanqi\browser\firefox" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build search.go">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="searchall3.2" />
       <working_directory value="$PROJECT_DIR$" />
@@ -95,12 +103,13 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build chromium_linux.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="searchall3.2" />
+    <configuration name="go build flagsearch.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="searchall3.5.6" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
+      <package value="searchall3.5" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/tuozhan/liulanqi/browser/chromium/chromium_linux.go" />
+      <filePath value="$PROJECT_DIR$/flagsearch/flagsearch.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build flagsearch.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -119,24 +128,21 @@
       <filePath value="$PROJECT_DIR$/main3.4.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build search.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="searchall3.2" />
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="searchall3.5.6" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/search/search.go" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="TestReverse in hackbrowserdata/utils/typeutil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="searchall3.2" />
-      <working_directory value="$PROJECT_DIR$/tuozhan/liulanqi/utils/typeutil" />
-      <root_directory value="$PROJECT_DIR$/tuozhan/liulanqi" />
+    <configuration name="go build searchall3.5" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="searchall3.5.6" />
+      <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="hackbrowserdata/utils/typeutil" />
+      <package value="searchall3.5" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestReverse\E$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -151,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build searchall3.5" />
+        <item itemvalue="Go Build.go build flagsearch.go (1)" />
         <item itemvalue="Go Build.go build main3.4.go" />
         <item itemvalue="Go Build.go build flagsearch.go" />
-        <item itemvalue="Go Build.go build search.go" />
-        <item itemvalue="Go Build.go build chromium_linux.go" />
-        <item itemvalue="Go Test.TestReverse in hackbrowserdata/utils/typeutil" />
       </list>
     </recent_temporary>
   </component>

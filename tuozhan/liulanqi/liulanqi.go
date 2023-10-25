@@ -13,20 +13,21 @@ import (
 var (
 	outputDir    string
 	outputFormat string
-	profilePath  string
 	isFullExport bool
 )
 
-func Execute(browserFlag string) {
+func Execute(browserFlag string, profilePath string) {
 
 	outputDir = "results"
 	outputFormat = "csv"
-	profilePath = ""
+
 	isFullExport = true
 
 	browsers, err := browser.PickBrowsers(browserFlag, profilePath)
+
 	if err != nil {
 		log.Error(err)
+
 	}
 
 	for _, b := range browsers {
@@ -39,7 +40,7 @@ func Execute(browserFlag string) {
 	}
 
 	if _, err := os.Stat(outputDir); err == nil {
-		log.Notice("请查看当前目录生成了文件夹:results")
+		log.Notice("Current directory generation folder:results")
 	} else {
 
 	}
@@ -47,11 +48,11 @@ func Execute(browserFlag string) {
 
 func CompressResult() error {
 	if err := fileutil.CompressDir(outputDir); err != nil {
-		return fmt.Errorf("压缩失败：%s", err.Error())
+		return fmt.Errorf("Compression failed：%s", err.Error())
 	}
 
 	dir, _ := os.Getwd()
-	log.Noticef("请查看当前目录生成压缩包: %s", filepath.Join(dir, "\\results\\results.zip"))
+	log.Noticef("Generate compressed package: %s", filepath.Join(dir, "\\results\\results.zip"))
 
 	return nil
 }

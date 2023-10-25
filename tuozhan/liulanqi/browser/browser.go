@@ -1,6 +1,7 @@
 package browser
 
 import (
+	"os"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -27,12 +28,14 @@ func PickBrowsers(name, profile string) ([]Browser, error) {
 	for _, b := range clist {
 		if b != nil {
 			browsers = append(browsers, b)
+
 		}
 	}
 	flist := pickFirefox(name, profile)
 	for _, b := range flist {
 		if b != nil {
 			browsers = append(browsers, b)
+
 		}
 	}
 	return browsers, nil
@@ -59,12 +62,24 @@ func pickChromium(name, profile string) []Browser {
 			}
 		}
 	}
+
 	if c, ok := chromiumList[name]; ok {
+
 		if profile == "" {
 			profile = c.profilePath
 		}
+
+		defer func() {
+			if r := recover(); r != nil {
+
+				os.Exit(1) // 正常退出程序，状态码为 1
+			}
+		}()
+
 		if !fileutil.IsDirExists(filepath.Clean(profile)) {
-			log.Fatalf("find browser %s failed, profile folder does not exist", c.name)
+
+			log.Fatalf("find browser %s failed, profile folder does not exist", name)
+
 		}
 		chromiumList, err := chromium.New(c.name, c.storage, profile, c.items)
 		if err != nil {
@@ -76,6 +91,7 @@ func pickChromium(name, profile string) []Browser {
 			browsers = append(browsers, b)
 		}
 	}
+
 	return browsers
 }
 
