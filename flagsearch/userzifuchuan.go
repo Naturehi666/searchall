@@ -13,12 +13,11 @@ func processUserInputString(input string) string {
 }
 
 func processUserRegexesString(inputList []string) []string {
-	var regexList []string
 
 	for _, input := range inputList {
 		regex := processUserInputString(input)
-		regexList = append(regexList, regex)
+		inputList = append(inputList, regex)
 	}
 
-	return regexList
+	return inputList
 }

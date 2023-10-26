@@ -18,7 +18,8 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 
 欢迎加入交流群！！！
-![image](https://github.com/Naturehi666/searchall/assets/58332933/1d674e49-3986-48b9-b07d-89a49a7550b9)
+![5321f5e37a3001cc55f98f4b0ea79df](https://github.com/Naturehi666/searchall/assets/58332933/2b06c0f4-02e3-4017-b441-110e1bb026c9)
+
 
 如果二维码过期，添加客服拉你进群，备注searchall
 
@@ -113,12 +114,26 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 ![image](https://github.com/Naturehi666/searchall/assets/58332933/02f063c9-5227-4534-b654-2e93cfa62560)
 
 
+9.23日 更新3.5.7版本
+
+修改友好界面
+解决已知bug
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/5b6ed597-9996-499b-9426-0fc5666aefb9)
+
+
+10.6日 更新3.5.8版本
+
+1.解决已知bug
+2.增加-e 参数拓展自定义扩展名功能，例如.java , .log 都可以
+3.增加-n 参数可以只扫描指定拓展名的功能
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/0a9a4244-8768-414a-977f-61f8bcec5670)
 
 
 
-下一步开发计划
 
-加入 doc，ppt，xls读取功能，敬请期待
+
 
 鸣谢
 

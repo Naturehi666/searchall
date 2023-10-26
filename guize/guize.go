@@ -5,13 +5,13 @@ const (
 	CharLimit     = 200             // 字符数限制为 100
 )
 
-var (
-	FileTypes = map[string]string{
-		"text":     ".txt,.md,.conf,.json,",
-		"config":   ".cfg,.conf,.ini,.properties,.config,.xml,.env,",
-		"database": ".sql,.yaml,.yml,",
-	}
-)
+var FileTypes = map[string]string{
+	"text":     ".txt,.md,.conf,.json,",
+	"config":   ".cfg,.conf,.ini,.properties,.config,.xml,.env,",
+	"database": ".sql,.yaml,.yml,",
+}
+
+var CusFileTypes = map[string]string{}
 
 var Blacklist = []string{
 	"PUT / ",

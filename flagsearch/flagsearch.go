@@ -1,8 +1,8 @@
 package flagsearch
 
 import (
-	"flag"
 	"fmt"
+	"github.com/urfave/cli/v2"
 	"searchall3.5/search"
 	"searchall3.5/tuozhan/liulanqi"
 	"searchall3.5/tuozhan/liulanqi/browser"
@@ -11,58 +11,120 @@ import (
 
 func Banner() {
 	fmt.Println(`
- __                        
-(_  _  _  __ _ |_  _  |  | 
+ __
+(_  _  _  __ _ |_  _  |  |
 __)(/_(_| | (_ | |(_| |  |
-        verson:3.5.5
+        verson:3.5.8
                      `)
-
 }
 
 func FlagSearchall() {
+
+	app := cli.NewApp()
+	app.Name = "searchall"
+	app.Usage = "Search for files or execute browser password."
 	Banner()
 
-	searchPath := flag.String("p", "", "The path to search for files"+
-		"\nexample: searchall.exe -p  C:\\\\")
-	zipFlag := flag.Bool("z", false, "compress browsers result to zip"+
-		"\nexample: searchall.exe -b all -z")
-	browserFlag := flag.String("b", "", "available browsers: all|"+browser.Names()+
-		"\nexample: searchall.exe -b all\n"+"360极速浏览器不支持360speedX版本\n")
-	userRegexes := flag.String("r", "", "自定义正则"+
-		"\nexample: searchall.exe -p C:\\\\ -r 正则1,正则2,正则3")
-	stringRegexes := flag.String("s", "", "自定义字符串(可预编译成正则)"+
-		"\nexample: searchall.exe -p C:\\\\ -s 字符串，字符串2，字符串3")
-	userOnlyFlag := flag.Bool("u", false, "只使用自定义正则和字符串进行检索"+
-		"\nexample: searchall.exe -p C:\\\\ -r 正则1,正则2,正则3 -u  ")
+	app.Commands = []*cli.Command{
+		{
+			Name:  "search",
+			Usage: "Search for files",
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name:  "p",
+					Usage: "The path to search for files",
+				},
+				&cli.StringFlag{
+					Name:  "r",
+					Usage: "Custom regular expressions",
+				},
+				&cli.StringFlag{
+					Name:  "s",
+					Usage: "Custom strings (pre-compiled into regex)",
+				},
+				&cli.BoolFlag{
+					Name:  "u",
+					Usage: "Only use custom regex and strings for searching",
+				},
+				&cli.StringFlag{
+					Name:  "e",
+					Usage: "Custom extension",
+				},
+				&cli.BoolFlag{
+					Name:  "n",
+					Usage: "Only use custom extension for searching",
+				},
+			},
+			Action: func(c *cli.Context) error {
 
-	flag.Parse()
+				searchPath := c.String("p")
+				userOnlyFlag := c.Bool("u")
+				userRegexes := c.String("r")
+				userStrings := c.String("s")
+				userExtension := c.String("e")
+				userOnlyExten := c.Bool("n")
 
-	var userRegexList []string
-	if *userRegexes != "" {
-		inputs := strings.Split(*userRegexes, ",")
-		userRegexList = processUserRegexes(inputs)
-	}
-	if *stringRegexes != "" {
-		inputs := strings.Split(*stringRegexes, ",")
-		userRegexList = processUserRegexesString(inputs)
+				if searchPath != "" {
+					var userRegexList []string
+
+					if userRegexes != "" {
+						inputs := strings.Split(userRegexes, ",")
+						userRegexList = inputs
+
+					} else if userStrings != "" {
+						inputs := strings.Split(userStrings, ",")
+						userRegexList = processUserRegexesString(inputs)
+
+					}
+
+					search.Searchall(searchPath, userRegexList, userOnlyFlag, userExtension, userOnlyExten)
+				} else {
+					cli.ShowSubcommandHelp(c)
+				}
+				return nil
+			},
+		},
+
+		{
+			Name:  "browser",
+			Usage: "browser password",
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name:  "b",
+					Usage: "Available browsers: all|" + browser.Names(),
+				},
+				&cli.BoolFlag{
+					Name:  "z",
+					Usage: "Compress browser results to zip",
+				},
+				&cli.StringFlag{
+					Name:  "p",
+					Usage: "custom profile dir path",
+				},
+			},
+			Action: func(c *cli.Context) error {
+
+				browserFlag := c.String("b")
+				profilePath := c.String("p")
+				zipFlag := c.Bool("z")
+
+				if browserFlag != "" {
+
+					liulanqi.Execute(browserFlag, profilePath)
+
+					if zipFlag {
+						err := liulanqi.CompressResult()
+						if err != nil {
+							fmt.Println(err)
+						}
+					}
+				} else {
+					cli.ShowSubcommandHelp(c)
+				}
+				return nil
+			},
+		},
 	}
 
-	if *searchPath != "" && *browserFlag == "" && *userRegexes == "" && *stringRegexes == "" {
-		search.Searchall(*searchPath, nil, *userOnlyFlag)
-	} else if *searchPath != "" && *browserFlag == "" && *userRegexes != "" && *stringRegexes == "" {
-		search.Searchall(*searchPath, userRegexList, *userOnlyFlag)
-	} else if *searchPath != "" && *browserFlag == "" && *userRegexes == "" && *stringRegexes != "" {
-		search.Searchall(*searchPath, userRegexList, *userOnlyFlag)
-	} else if *searchPath == "" && *browserFlag != "" {
-		liulanqi.Chromeall(*browserFlag)
-		if *zipFlag {
-			err := liulanqi.CompressResult()
-			if err != nil {
-				fmt.Println(err)
-			}
-		}
-	} else {
-		flag.PrintDefaults()
-		return
-	}
+	app.RunAndExitOnError()
 }

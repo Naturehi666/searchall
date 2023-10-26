@@ -1,6 +1,7 @@
 package browser
 
 import (
+	"os"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -27,12 +28,14 @@ func PickBrowsers(name, profile string) ([]Browser, error) {
 	for _, b := range clist {
 		if b != nil {
 			browsers = append(browsers, b)
+
 		}
 	}
 	flist := pickFirefox(name, profile)
 	for _, b := range flist {
 		if b != nil {
 			browsers = append(browsers, b)
+
 		}
 	}
 	return browsers, nil
@@ -53,17 +56,30 @@ func pickChromium(name, profile string) []Browser {
 				continue
 			}
 			for _, b := range multiChromium {
+
 				log.Noticef("find browser %s success", b.Name())
 				browsers = append(browsers, b)
 			}
 		}
 	}
+
 	if c, ok := chromiumList[name]; ok {
+
 		if profile == "" {
 			profile = c.profilePath
 		}
+
+		defer func() {
+			if r := recover(); r != nil {
+
+				os.Exit(1) // 正常退出程序，状态码为 1
+			}
+		}()
+
 		if !fileutil.IsDirExists(filepath.Clean(profile)) {
-			log.Fatalf("find browser %s failed, profile folder does not exist", c.name)
+
+			log.Fatalf("find browser %s failed, profile folder does not exist", name)
+
 		}
 		chromiumList, err := chromium.New(c.name, c.storage, profile, c.items)
 		if err != nil {
@@ -71,9 +87,11 @@ func pickChromium(name, profile string) []Browser {
 		}
 		for _, b := range chromiumList {
 			log.Noticef("find browser %s success", b.Name())
+
 			browsers = append(browsers, b)
 		}
 	}
+
 	return browsers
 }
 
@@ -87,11 +105,13 @@ func pickFirefox(name, profile string) []Browser {
 			} else {
 				profile = fileutil.ParentDir(profile)
 			}
+
 			if !fileutil.IsDirExists(filepath.Clean(profile)) {
 				log.Noticef("find browser firefox %s failed, profile folder does not exist", v.name)
 				continue
 			}
-			if multiFirefox, err := firefox.New(v.name, v.storage, profile, v.items); err == nil {
+
+			if multiFirefox, err := firefox.New(profile, v.items); err == nil {
 				for _, b := range multiFirefox {
 					log.Noticef("find browser firefox %s success", b.Name())
 					browsers = append(browsers, b)
@@ -100,8 +120,10 @@ func pickFirefox(name, profile string) []Browser {
 				log.Error(err)
 			}
 		}
+
 		return browsers
 	}
+
 	return nil
 }
 

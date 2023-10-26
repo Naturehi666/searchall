@@ -18,8 +18,6 @@ import (
 	"unicode/utf8"
 )
 
-var regexes []*regexp.Regexp // 预先编译的正则表达式
-
 func compileRegexes(regexList []string) ([]*regexp.Regexp, error) {
 	var compiledRegexes []*regexp.Regexp
 
@@ -35,7 +33,7 @@ func compileRegexes(regexList []string) ([]*regexp.Regexp, error) {
 	return compiledRegexes, nil
 }
 
-func SearchConfigFiles(path string, info os.FileInfo, allRegexes []*regexp.Regexp) ([]string, error) {
+func SearchConfigFiles(path string, info os.FileInfo, allRegexes []*regexp.Regexp, customFileTypeList string, extenOnlyFlag bool) ([]string, error) {
 
 	var results []string
 
@@ -52,12 +50,26 @@ func SearchConfigFiles(path string, info os.FileInfo, allRegexes []*regexp.Regex
 	}
 	fileType := ""
 
-	for k, v := range guize.FileTypes {
-		if strings.Contains(v, ext+",") {
-			fileType = k
-			break
+	if extenOnlyFlag == false {
+		UpdateFileTypes(guize.FileTypes, "custom", customFileTypeList)
+		for k, v := range guize.FileTypes {
+			if strings.Contains(v, ext+",") {
+				fileType = k
+				break
+			}
 		}
+
+	} else {
+		UpdateFileTypes(guize.CusFileTypes, "custom", customFileTypeList)
+		for k, v := range guize.CusFileTypes {
+			if strings.Contains(v, ext+",") {
+				fileType = k
+				break
+			}
+		}
+
 	}
+
 	if fileType == "" {
 		return results, nil
 	}
@@ -159,7 +171,7 @@ func SearchConfigFiles(path string, info os.FileInfo, allRegexes []*regexp.Regex
 	return results, nil
 }
 
-func Searchall(path string, userRegexList []string, userOnlyFlag bool) {
+func Searchall(path string, userRegexList []string, userOnlyFlag bool, customFileTypeList string, extenOnlyFlag bool) {
 
 	//获取cpu核心数
 	numCores := runtime.NumCPU() // 根据系统的能力调整此值
@@ -249,7 +261,7 @@ func Searchall(path string, userRegexList []string, userOnlyFlag bool) {
 				return nil
 			}
 
-			res, err := SearchConfigFiles(path, info, CompiledRegexes)
+			res, err := SearchConfigFiles(path, info, CompiledRegexes, customFileTypeList, extenOnlyFlag)
 			if err != nil {
 				errChan <- err
 				return nil

