@@ -1,7 +1,7 @@
 # Naturehi
 
 工具使用说明
-点击下方链接
+点击链接
 https://github.com/Naturehi666/searchall/blob/main3.5.6/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md
 
 欢迎关注我的公众号
