@@ -140,7 +140,11 @@ searchall3.5可以快速搜索服务器中的有关username，passsword,账号�
 
 1.解决浏览器爬取密码已知bug
 
-![image](https://github.com/Naturehi666/searchall/assets/58332933/e9e91584-43f6-4a43-b35d-5af53c0eefdc)
+
+![image](https://github.com/Naturehi666/searchall/assets/58332933/a29675a5-bb22-4105-afc3-2d503efd614e)
+
+
+
 
 
 由于没有实验环境一直没有测试解决该bug，感谢CV,她她她朋友的帮忙进行测试，十分感谢！
